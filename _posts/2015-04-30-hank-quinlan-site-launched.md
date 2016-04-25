@@ -17,19 +17,23 @@ class User < ActiveRecord::Base
   enum status: ['active', 'inactive', 'archived']
 end
 
-User.first.status
+user.status
 =>"active"
+#Rails automagically returns the enum string value , in this case 'active', instead of the real database value which is 0
 ```
-So despite the status field being an integer , Rails will give you the semantic value (in this case - 'active'). This makes it nicer for you as an app developer because the code is clearer. You can do 
+So despite the status field being an integer , Rails will give you the semantic word value (in this case - 'active'). This makes it nicer for you as an app developer because the code is clearer. You can do 
 
 ```ruby
 user.active?
 ```
-instead of having to do remember in your head that status 0 means active.
+instead of having to do remember in your head that the active status is 0 
 
 ```ruby
+#without enums we would need to do remember the integer values which aren't semantic and make for vague code
 user.status == 0
 ```
+
+Let's define what our enum module needs to implement:
 
 
 
