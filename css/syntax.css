@@ -1,3 +1,4 @@
+pre.highlight {    padding: 20px; border-radius: 20px;}
 .highlight { background: #2b2b2b; color: #f9f7f3 }
 .highlight .hll { background-color: #3a4055 }
 .highlight .c { color: #5a647e } /* Comment */
