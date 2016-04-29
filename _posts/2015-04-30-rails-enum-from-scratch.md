@@ -7,6 +7,7 @@ In this post we'll build our version of  [http://api.rubyonrails.org/v4.1/classe
 
 If you're not already familiar with what Rails enums are please [http://api.rubyonrails.org/v4.1/classes/ActiveRecord/Enum.html](refresh your memory)
 In a nutshell - Rails enums are a convenience to allow you to map integers to a collection of strings:
+
 ```ruby
 class User < ActiveRecord::Base
   enum status: ['active', 'inactive', 'archived']
@@ -15,6 +16,7 @@ end
 joe = User.first
 joe.status
 =>"active"
+
 ```
 Did you notice the little magic? As you should know, the status field for User class is an integer(all enum fields must be integers), yet when we asked 'joe' what it's status was instead of returning '0'(which is what actually gets saved in the database) , Rails automagically converts 0 to the enum string value, which is 'active' in this case.
 
